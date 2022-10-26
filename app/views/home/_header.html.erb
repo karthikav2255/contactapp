@@ -1,0 +1,51 @@
+
+  <!--Nav bar starts here-->
+  <nav>
+    <label class="logo"><%= image_tag 'sm.png' ,class:"logimg" %><span class="logo1"> SMartApp</span></label>
+    <input type="checkbox" id="check" />
+    <label for="check" class="hamberger-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      
+      <% if user_signed_in? %>
+
+      <li> 
+      
+      <%= form_tag(contacts_list_path, method: :get) do %>
+        <%= text_field_tag :search_name, params[:search_name], :placeholder => "Search Contact" %>
+         <%= submit_tag "Search" , class:"button" %> 
+         <script>
+            $("#search_name").bind("ajax:complete", function(event,xhr,status){
+            $('#search_name').val(''); 
+          }
+         </script>
+     <% end %>
+     
+     </li>
+     &emsp;
+      <li><button class="dropbtn">  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'nav-link' %></button><li>
+
+      <li>&emsp;
+        <div class="dropdown">
+        <%= image_tag(current_user.avatar_thumbnail ,class:"profile_photo" ) %>   <%= current_user.name%>
+        
+          <div class="dropdown-content">
+            <%= link_to "Contacts", contacts_list_path  ,class: 'nav-link'%>
+            <%= link_to "Add Contacts", contacts_new_path,  class: 'nav-link' %>
+            <%= link_to 'Edit Profile', edit_user_registration_path ,  class: 'nav-link' %> 
+            
+          </div>
+        </div>
+        
+      </li>
+      <% else %> 
+      <li><button class="dropbtn">  <%= link_to "Sign Up", new_user_registration_path , class: 'nav-link'%></button></li>
+      <li>&emsp;
+      <li><button class="dropbtn">  <%= link_to "Login", new_user_session_path  , class: 'nav-link'%></button></li>
+       
+      <% end %>
+    
+    </ul>
+  </nav>
+  <!--Nav bar ends here-->

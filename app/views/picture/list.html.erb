@@ -1,0 +1,27 @@
+
+
+<div class="attendance-list"><br/>
+<h2>Upload New Picture</h2>
+<%= link_to'Choose picture' ,picture_create_path %>
+
+</div>
+<br/><br/>
+
+<section class="attendance mt-5">
+<div class="attendance-list"><br/>
+<h2>Gallery</h2>
+<br/>
+<div class="row2"> 
+<% @pictures.each do |t| %>
+    <% if t.pic.attached? %>
+      <div class="item"> 
+        <%= image_tag((t.pic) , :class => "img")%>  
+      </div>
+    <% end %>   
+<% end %>
+</div>
+</section>
+</div>
+
+
+

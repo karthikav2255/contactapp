@@ -1,0 +1,194 @@
+<br/><br/><br/>
+
+<div class="row g-6 mb-6">
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                    
+                                        <span class="h4 font-semibold text-muted text-sm d-block mb-2  ">Contacts</span>
+                                        <span class="h6 font-bold mb-0 purple"><%= current_user.contacts.count %></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h4 font-semibold text-muted text-sm d-block mb-2">Pictures</span>
+                                        <span class="h6 font-bold mb-0"><%= current_user.pictures.count %></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h4 font-semibold text-muted text-sm d-block mb-2">Last Login</span>
+                                        <span class="h6 font-bold mb-0"><%= current_user.current_sign_in_at%></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h4 font-semibold text-muted text-sm d-block mb-2">Birthdays </span>
+                                        <span class="h6 font-bold mb-0">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+<br/><br/>
+
+<div class="attendance-list">
+<h1>Favourite Contacts</h1><br/>
+<body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+      <% @contacts.each do |t| %>
+        <div class="swiper-slide">
+        
+          <div class="card index_card">
+          <% if t.dp.attached? %> 
+            <center>   <%= image_tag(t.dp , class:"display_photo") if t.dp.attached? %> </center>
+          <% else %>
+            <center>   <%= image_tag("default-avatar-2.png" , class:"display_photo") %></center>
+          <% end %> 
+           
+          <br/>
+          <h4><%= t.firstName + '  ' + t.lastName %></h4>  
+          <span class="h6 font-semibold text-muted text-sm d-block mb-2  "><%= t.email %> </span>
+          <br/>
+            
+          <%=link_to 'Profile',:controller => 'contacts', :action => 'show', :id=>t.id , class:'card-link'%>
+          <br/>
+          </div>
+        </div>
+      <% end %> 
+      <br/>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
+  
+  </div>
+
+  <section class="attendance mt-5">
+      <div class="attendance-list">
+        <h1 class="logo1">Attendance List</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Depart</th>
+              <th>Date</th>
+              <th>Join Time</th>
+              <th>Logout Time</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>Sam David</td>
+              <td>Design</td>
+              <td>03-24-22</td>
+              <td>8:00AM</td>
+              <td>3:00PM</td>
+              <td><button>View</button></td>
+            </tr>
+            <tr class="active">
+              <td>02</td>
+              <td>Balbina Kherr</td>
+              <td>Coding</td>
+              <td>03-24-22</td>
+              <td>9:00AM</td>
+              <td>4:00PM</td>
+              <td><button>View</button></td>
+            </tr>
+            <tr>
+              <td>03</td>
+              <td>Badan John</td>
+              <td>testing</td>
+              <td>03-24-22</td>
+              <td>8:00AM</td>
+              <td>3:00PM</td>
+              <td><button>View</button></td>
+            </tr>
+            <tr>
+              <td>04</td>
+              <td>Sara David</td>
+              <td>Design</td>
+              <td>03-24-22</td>
+              <td>8:00AM</td>
+              <td>3:00PM</td>
+              <td><button>View</button></td>
+            </tr>
+            <!-- <tr >
+              <td>05</td>
+              <td>Salina</td>
+              <td>Coding</td>
+              <td>03-24-22</td>
+              <td>9:00AM</td>
+              <td>4:00PM</td>
+              <td><button>View</button></td>
+            </tr>
+            <tr >
+              <td>06</td>
+              <td>Tara Smith</td>
+              <td>Testing</td>
+              <td>03-24-22</td>
+              <td>9:00AM</td>
+              <td>4:00PM</td>
+              <td><button>View</button></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+# <script>
+#     window.onload = function() {
+#       if (window.jQuery) {  
+#           // jQuery is loaded  
+#           alert("Yeah!");
+#       } else {
+#           // jQuery is not loaded
+#           alert("Doesn't Work");
+#       }
+#   }
+#   </script>
+

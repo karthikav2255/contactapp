@@ -1,0 +1,108 @@
+
+<div class="row">
+
+<div class="col-12 ">
+<% if @contacts.blank? %>
+    <p> No contacts to display</p>
+<% else %>
+
+<section class="attendance mt-5">
+<div class="attendance-list">
+
+
+<div class="logo1">
+<div class="row">
+    <div class="col-9">
+    <h1 >Contact List</h1>
+
+    </div>
+    <div class="col-3">
+    <button class="dropbtn">  <%= link_to "Download PDF", contacts_list_path(format: :pdf),  class: 'nav-link' %></button>
+       
+    <button class="dropbtn">  <%= link_to "Send Email", contacts_email_page_path,  class: 'nav-link' %></button>
+       
+    </div>
+</div>
+
+<table class="table p-5 ">
+<thead>
+ <tr>
+  <th>Contacts Id</th>
+  <th> Name</th>
+  <th>Address</th>
+  <th>City</th>
+  <th>Phone</th>
+  <th>Email</th>
+  <th>user id</th>  
+  <th>Download</th>
+  <th>Update</th>
+  <th>Delete</th>
+  <th>Show</th>
+
+ </tr>
+</thead>
+<tbody>
+ <tr>
+  <div  id='show-content'>
+    <% @contacts.each do |t| %>
+      
+        <td><%= t.id %></td>
+        <td><%= link_to t.firstName + ' '+ t.lastName, {:action => 'show', :id => t.id} %></td>
+       
+        <td><%= t.address %></td>
+        <td> <%= t.city %></td>
+        <td><%= t.phone %></td>
+        <td> <%= t.email %></td>
+        <td><%= t.user_id %></td>  
+        <td><%=link_to 'PDF', contacts_show_path(t , :id => t.id, format: :pdf)  %></td>
+        <td><%= button_to 'Update', {:action => 'edit', :id => t.id}  %></td>
+        <td><%= button_to 'Delete', {:action => 'delete', :id => t.id}  %></td>
+        <td> <a href="#ex1" rel="modal:open" id="showmodal">Show</a><td>
+        </tr>
+        
+    <%end%> 
+  </div>
+ </tr>  
+</tbody>
+</table>
+
+</div>
+</section>
+
+<%end%>
+<br/>
+
+<div class="row">
+<div class="col-3">
+
+<div class="pag">
+<% if @contacts.length > 0 && @contacts.total_pages > 1 %>
+    <div class="page_info">
+        <%= page_entries_info @contacts %>
+    </div>
+<% end %> </div>
+
+</div>
+<div class="col-5 ">
+    <div class="digg_pagination " >
+    <%= will_paginate @contacts , :container => false %>
+</div>
+</div>
+
+<div class="col-4  mt-1">
+<div class="page_info " >
+<%= form_tag(contacts_list_path, method: :get) do  %>
+    <%= select_tag(:page_size, options_for_select([['Select Pagesize', ],['5', 5], ['7', 7], ['20', 20]], selected: :page_size ),onchange: "this.form.submit();" ) %>
+    
+<% end %>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+

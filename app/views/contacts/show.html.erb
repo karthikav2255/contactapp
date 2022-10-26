@@ -1,0 +1,54 @@
+<div class="container">
+<br/><br/>
+<div class='row'>
+   <div class="col-6 ">
+ 
+   <h1><%= @contact.firstName + ' ' +@contact.lastName %></h1>
+
+   <strong>Address: </strong> <%= @contact.address %><br />
+   <strong>City :</strong> <%= @contact.city %><br />
+   <strong>Phone: </strong> <%= @contact.phone %><br />
+   <strong>Email :</strong> <%= @contact.email %><br />
+   <strong>Created Date:</strong> <%= @contact.created_at %><br />
+   </div>
+
+
+
+
+   <div class="col-2 ">
+   
+     <% if @contact.dp.attached? %> 
+    
+      <%= image_tag(@contact.dp , class:"display_photo") if @contact.dp.attached? %>
+     <% else %>
+      <%= image_tag("default-avatar-2.png" , class:"display_photo") %>
+     <% end %> 
+    <br/>  <br/>
+
+<%= form_for @contact, :url =>{:action => "update", :id =>@contact} do |form| %>
+  
+  <% if @contact.favourite!=1 %>
+  <%= form.hidden_field :favourite, class: "form-control",value:'1'%>
+
+  <% else %>
+  <%= form.hidden_field :favourite, class: "form-control",value:'0'%>
+ 
+  <% end %>  
+  <% if @contact.favourite!=1 %>
+ <center> <%= form.submit " Add to Favorites  " ,class:"button-fav" %></center>
+  <% else %>
+  <center> <%= form.submit "Remove from Favorite" ,class:"button-fav" %></center>
+  <% end %>
+
+<% end %>
+   </div>
+</div>
+</div>
+<div class="col-4 ">
+</div>
+
+<hr/>
+
+<%= link_to 'Back', {:action => 'list'} %> |
+<%= link_to 'Update', {:action => 'edit', :id => @contact.id}  %> |
+<%= link_to 'Delete', {:action => 'delete', :id => @contact.id} %>  

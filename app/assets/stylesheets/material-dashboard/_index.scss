@@ -1,0 +1,210 @@
+body {
+    height:1000px;
+    width:100%;
+  background: #e2e1e0;
+  text-align: center;
+}
+.index{
+    margin-top:8%;
+   margin-left: 8%;
+    width: 60rem;
+    height:auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 2px;
+    display: inline-block;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    
+}
+.index_banner {
+    //width:60rem;
+   // height: 10rem;
+   // color: #e2e1e0;
+    background-image: image-url('Website-Banner.jpg');
+    align-items: center;
+    display: flex; 
+    justify-content: center; 
+}
+
+.logbox{
+   
+    width:60rem;
+    height: 30rem;
+    display: flex; 
+    justify-content: center; 
+   
+}
+.index_b1{
+    border:#312450 4px solid;
+    border-radius: 7px; 
+    height: 200px; 
+    margin-top: 25%;
+    align-items: center;
+    display: flex; 
+    justify-content: center; 
+}
+
+.purple_box{
+    background-color: #452A5A;
+    border-color: #452A5A;
+    color:#e2e1e0;
+    
+}
+
+
+
+//------------------------------
+/* MAin Section */
+.main{
+    //position: relative;
+  //  padding: 20px;
+   // width: 100%;
+  }
+  .main-top{
+    display: flex;
+    padding: 20px;
+    width: 100%;
+  }
+  .main-top i{
+    position: absolute;
+    right: 0;
+    margin: 20px 30px;
+    color: rgb(110, 109, 109);
+    cursor: pointer;
+  }
+  .main .users{
+    display: flex;
+    width: 100%;
+  }
+  .users .card{
+    width: 20%;
+    margin: 10px;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  .users .card img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .users .card h4{
+    text-transform: uppercase;
+  }
+  .users .card p{
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  .users table{
+    margin:  auto;
+  }
+  .users .per span{
+    padding: 5px;
+    border-radius: 10px;
+    background: rgb(223, 223, 223);
+  }
+  .users td{
+    font-size: 14px;
+    padding-right: 15px;
+  }
+  .users .card button{
+    width: 100%;
+    margin-top: 8px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #312450;
+  }
+  .users .card button:hover{
+    background: #312450;
+    color: #fff;
+    transition: 0.5s;
+  }
+  
+
+
+/*Attendance List serction  */
+.attendance{
+    margin-top: 20px;
+    text-transform: capitalize;
+    height: auto;
+  }
+  .attendance-list{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0.1, 0.1, 0.1, 0.1);
+  }
+  .table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+  }
+  table thead tr{
+    color: #fff;
+    background: #312450;
+    text-align: left;
+    font-weight: bold;
+  }
+  .table th,
+  .table td{
+    padding: 12px 15px;
+  }
+  .table tbody tr{
+    border-bottom: 1px solid #ddd;
+  }
+  .table tbody tr:nth-of-type(odd){
+    background: #f3f3f3;
+  }
+  .table tbody tr.active{
+    font-weight: bold;
+    color: #312450;
+  }
+  .table tbody tr:last-of-type{
+    border-bottom: 2px solid  #312450;
+  }
+  .table button{
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #312450;
+  }
+  .table button:hover{
+    background: #312450;
+    color: #fff;
+    transition: 0.5rem;
+  }
+
+ .index_button{
+  padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #312450;
+ }
+ .index_button:hover{
+  background: #312450;
+  color: #fff;
+  transition: 0.5rem;
+ }
+ .index-card image{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+}
+.index-card{
+  height: 400px;
+  width:400px;
+}

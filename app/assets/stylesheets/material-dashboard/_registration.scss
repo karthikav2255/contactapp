@@ -1,0 +1,28 @@
+.reg  {
+    height:100px;
+    width:100%;
+    //background-color: black;
+   // background-image: image-url('brick.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.reg_box {
+    width: 800px;
+    height: auto;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 45%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 4px 22px -8px #0004;
+    display: flex;
+    overflow: hidden;
+}
+.purple
+{
+    color: purple;
+}
+.index_banner {
+
+}

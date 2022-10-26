@@ -1,0 +1,31 @@
+<br/><br/>
+<div class=" row">
+<div class=" col-2"></div> 
+<div class="  col-8">
+<div class="attendance-list ">
+<br/>
+<h1>Send Email </h1>
+<form id="emailForm"action="/send_email" method="post">
+<br/> 
+<%= select_tag "email", options_from_collection_for_select(current_user.contacts.all, 'email','email') , { :multiple => true, class:"form-control" }%>
+<br/>
+<input id="sub" name="sub" class="form-control" size="30"  placeholder="Subject"  type="text" />
+<br/>
+<textarea name="message" class="form-control" placeholder="Your message" row=6></textarea><br/>
+<button type="submit"  onclick="clearForm()"  class='button-21' >Submit</button>
+</form>
+</div> 
+</div> 
+<div class=" col-2"></div> 
+</div> 
+</div> 
+
+<script>
+
+clearForm(){
+    alert("hi")
+    document.getElementById("emailForm").reset(); 
+    document.getElementById("sub").value = "";
+    document.getElementById("message").value = "";
+}
+</script>

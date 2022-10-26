@@ -1,0 +1,71 @@
+
+<div class='reg_box' >
+<div class="row">
+<div class="col-1" style="  background: #312450;">
+</div>
+<div class="col-11">
+
+<div class="container  center log-div " style="width: 45rem; ">
+ 
+
+<br/><br/>
+    <h1 class="mt-5  purple"><b>SIGN UP</b></h1>
+<br/>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%# render "devise/shared/error_messages", resource: resource %>
+      <div  class="field form-group">
+      
+      <%= f.text_field :name,  autofocus: true, autocomplete: "name" , class: "form-control" , placeholder:"Name"%>
+      <h6><%= f.error_message_for(:name)%></h6>
+   </div>
+   <br/>
+        <div  class="field form-group">
+      
+           <%= f.email_field :email,  autofocus: true, autocomplete: "email" , class: "form-control" , placeholder:"Email"%>
+           <h6><%= f.error_message_for(:email)%></h6>
+        </div>
+        <br/>
+        <div  class="field form-group">
+    
+          <%= f.password_field :password,  autocomplete: "new-password" , class: "form-control" , placeholder:"Password (6 characters minimum)" %>
+          <h6><%= f.error_message_for(:password)%></h6>
+        </div>
+         <br/>
+        <div  class="field form-group">
+    
+          <%= f.password_field :password_confirmation,  autocomplete: "new-password", class: "form-control", placeholder:"Password_confirmation" %>
+          <h6><%= f.error_message_for(:password_confirmation)%></h6>
+        </div>
+        <br/>
+        
+      
+  <div class="field form-group">
+  <%= f.file_field :avatar ,class:"form-control" %>
+  <% if resource.avatar.attached? %>
+        <%= image_tag(resource.avatar) %>
+      <% else %>
+        <% image_tag("/default_profile.jpg") %>
+
+      <% end %>
+</div>  
+<br/>
+
+    
+
+
+        <br/>
+       <div class="actions text-center">
+           <%= f.submit "Sign up", class: "button-21" %>
+        </div>
+    <% end %>  
+    <br/>
+      <br/><hr>
+        <%= render "devise/shared/links" %>
+        <br/>
+  </div>
+
+
+</div>
+</div>
+  
+</div>

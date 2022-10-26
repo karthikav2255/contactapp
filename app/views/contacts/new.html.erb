@@ -1,0 +1,71 @@
+
+<div class ="container mt-5 p-5" >
+<div class="row">
+<div class="col-3" >
+</div>
+<div class="col-6 border">
+
+<br/><h2 class="text-center">Add Contacts
+<br/>
+
+<%= form_for @contact, :url =>{:action => "create", :id =>@contact} do |f| %>
+<br/>
+  <div class="form-group ">
+    <%= f.text_field :firstName ,class:"form-control", placeholder:"First Name"%>
+    <h6><%= f.error_message_for(:firstName)%></h6>
+  </div>
+<br/>
+
+<div class="form-group">
+  <%= f.text_field :lastName ,class:"form-control" ,placeholder:"Last Name"%>
+  <h6><%= f.error_message_for(:lastName)%> </h6>
+</div>
+<br/>
+
+<div class="form-group">
+  <%= f.text_field :address ,class:"form-control", placeholder:"Address" %>
+  <h6><%= f.error_message_for(:address)%> </h6>
+</div>
+<br/>
+
+<div class="form-group">
+<%= f.text_field :city ,class:"form-control", placeholder:"City"%>
+<h6><%= f.error_message_for(:city)%> </h6>
+</div>
+<br/>
+
+<div class="form-group">
+<%= f.text_field :phone ,class:"form-control" ,placeholder:"Phone"%>
+<h6><%= f.error_message_for(:phone)%> </h6>
+</div>
+<br/>
+
+<div class="form-group">
+<%= f.text_field :email ,class:"form-control", placeholder:"Email" %>
+<h6><%= f.error_message_for(:email)%> </h6>
+</div>
+<br/>
+
+<div class="form-group">
+<%= f.file_field :dp ,class:"form-control", placeholder:"Browse image"%>
+</div>
+
+<div class="form-group">
+<%= f.hidden_field :user_id ,class:"form-control", value:current_user.id %>
+</div>
+<br/>
+<div class="text-center">
+<%= f.submit class:'button-21'%>
+
+</div>
+<br/>
+<% end %>
+
+ </div>
+ <div class="col-3">
+ </div>
+ </div>
+ 
+ </div>    
+
+ 

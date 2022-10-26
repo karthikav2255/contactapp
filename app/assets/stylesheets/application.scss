@@ -1,0 +1,88 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+ @import "material-dashboard/buttons";
+ @import "material-dashboard/navbar";
+ @import "material-dashboard/login";
+ @import "material-dashboard/sidebar";
+ @import "material-dashboard/registration";
+ @import "material-dashboard/search";
+ @import "material-dashboard/gallery";
+ @import "material-dashboard/pagination";
+
+
+/*~~~~~~~~~~~~~~ Global setup starts ~~~~~~*/
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+
+
+  body { 
+    font-family: Arial;
+    background-image: image-url(''); 
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+  }
+  
+  // ----loginbtn ----
+  .loginbtn{
+    background-color: aqua;
+    border: 1px;
+  }
+
+  
+
+// ---------------purple
+.purple{
+  color: #472066;
+}
+
+serviceBox{
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+.serviceBox .service-icon{
+  color: #fff;
+  background: linear-gradient(to right bottom, #ff00cc 35%, #333399 65%);
+  font-size: 45px;
+  line-height: 80px;
+  height: 95px;
+  width: 95px;
+  margin: 0 auto 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05) inset, 0 0 5px rgba(0, 0, 0, 0.1);
+  border: 10px solid #f9f9f9;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent; 
+}
+.card-link{
+  background-color: #312450;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}

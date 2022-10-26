@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contactapp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script src="https://kit.fontawesome.com/6a56f7c0ea.js" SameSite=None></script>
+
+      <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+
+
+    <%= javascript_importmap_tags %>
+
+  </head>
+
+  <body>
+  <%= render "home/header" %>
+  <main class="main">
+     
+<%= render 'home/sidebar' %>
+  <section class="twitter">
+    <div class="container"   >
+     
+       <% if notice %>
+       <p class="alert alert-success "><%= notice %></p>
+     <% end %>
+     <% if alert %>
+       <p class="alert alert-danger"><%= alert %></p>
+     <% end %>
+     <%= yield %>
+     <% if flash %>
+     <div id="flash-notice" title="Basic dialog" class="flash-div flash-message">
+      
+     </div>
+   <% end %>
+      </div>
+  </section>
+  </main>
+
+</body>
+</html>

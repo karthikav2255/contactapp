@@ -1,0 +1,43 @@
+<div class ="container mt-5 p-5" >
+<div class="row">
+<div class="col-3" >
+</div>
+<div class="col-6 border">
+<br/><h2 class="text-center">Upload Picture
+<br/>
+<%= form_for @picture, :url=>{:action => "create", :id =>@picture}  do |f| %>   
+    <br/>
+
+    <div class="form-group">
+        <%= f.text_field :title ,class:"form-control", placeholder:"Title"%>
+        <h6><%= f.error_message_for(:title)%> </h6>
+    </div>
+    <br/>
+
+    <div class="form-group">
+        <%= f.text_field :description ,class:"form-control" ,placeholder:"Description"%>
+        <h6><%= f.error_message_for(:description)%> </h6>
+    </div>
+    <br/>
+
+    <div class="form-group">
+        <%= f.file_field :pic ,class:"form-control", placeholder:"Browse image"%>
+    </div>
+
+    <div class="form-group">
+        <%= f.hidden_field :user_id ,class:"form-control", value:current_user.id %>
+    </div>
+<br/>
+<br/>
+<div class="text-center">
+<%= f.submit class:'button-21'%>
+
+</div>
+<br/>
+<% end %>    
+</div>
+ <div class="col-3">
+ </div>
+ </div>
+ 
+ </div>    

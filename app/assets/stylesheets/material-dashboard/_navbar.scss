@@ -1,0 +1,217 @@
+/*~~~~~~~~~~~~~~~~~~~~~~ Nav Bar starts ~~~~~~~~~~~~~~~~~~~~~~*/
+nav {
+ 
+    background-image: linear-gradient(to right, #f1f1f3, #f3edf8);
+    height: 60px;
+    max-width: 100%;
+  }
+  label.logo {
+    color: cornsilk;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 60px;
+    margin-left: 20px;
+    float: left;
+  }
+  nav ul {
+    float: right;
+    margin-right: 50px;
+  }
+  nav ul li {
+    display: inline-block;
+    //line-height: 60px;
+    //margin: 0px 20px;
+  }
+  
+  nav ul li a {
+    color: rgb(45, 30, 63);
+   // font-size: 18px;
+    //font-weight: bolder;
+  }
+  a.active,
+  a:hover {
+    color: #44b3e2;
+    color: rgb(53, 52, 52);
+  }
+  .hamberger-btn {
+    font-size: 35px;
+    color: white;
+    float: right;
+    margin-right: 30px;
+    line-height: 60px;
+    cursor: pointer;
+    display: none;
+  }
+  #check {
+    display: none;
+  }
+  /* ~~~~~~~~~~~~~~~~~~~~ Nav Bar ends ~~~~~~~~~~~~~~~~~~~~~*/
+  
+  /* ~~~~~~~~~~~~~~~~~~~~ Banner starts ~~~~~~~~~~~~~~~~~~~~~*/
+  section {
+    background: url("https://ibb.co/wRMVsP3") no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    height: 90vh;
+  }
+  
+  .fancy-radius {
+    position: absolute;
+    top: 80px;
+    right: 350px;
+    border-top: 155px solid #115a72;
+    border-right: 215px solid #0d4658;
+    border-left: 125px solid #104353;
+    border-bottom: 155px solid #146783;
+    border-radius: 75% 25% 13% 87% / 59% 59% 41% 41%;
+  }
+  .greeting {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    color: whitesmoke;
+    right: 390px;
+    top: 190px;
+  }
+  /* ~~~~~~~~~~~~~~~~~~~~ Banner ends ~~~~~~~~~~~~~~~~~~~~~*/
+  
+  /* ~~~~~~~~~~~~~~~~~~~~ Media Query starts ~~~~~~~~~~~~~~~~~~~~~*/
+  @media (max-width: 768px) {
+    section {
+      background-position: top right;
+    }
+  
+    label.logo {
+      font-size: 30px;
+      margin-left: 20px;
+      color: whitesmoke;
+    }
+    nav ul li a {
+      color: white;
+      font-size: 16px;
+    }
+    .hamberger-btn {
+      display: block;
+    }
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(
+        0deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(45, 42, 145, 1) 97%
+      );
+      top: 60px;
+      right: 100%;
+      text-align: center;
+      transition: all 0.5s;
+    }
+    nav ul li {
+      display: block;
+    }
+    a:hover {
+      background: linear-gradient(
+        93deg,
+        rgba(94, 129, 207, 1) 16%,
+        rgba(94, 161, 187, 1) 55%
+      );
+    }
+  
+    #check:checked ~ ul {
+      right: -10px;
+      z-index: 100;
+    }
+    .fancy-radius {
+      display: none;
+    }
+  
+    .greeting {
+      font-size: 20px;
+      font-weight: bold;
+      position: relative;
+      color: whitesmoke;
+      left: 0px;
+      top: 20px;
+      background: rgb(109, 157, 162);
+      background: linear-gradient(
+        256deg,
+        rgba(109, 157, 162, 1) 18%,
+        rgba(94, 161, 187, 1) 58%
+      );
+      transition: all 0.6s;
+      z-index: 99;
+    }
+  }
+  /* ~~~~~~~~~~~~~~~~~~~~ Media query ends ~~~~~~~~~~~~~~~~~~~~~*/
+  
+    /* ~~~~~~~~~~~~~~~~~~~~ Nav logo img ~~~~~~~~~~~~~~~~~~~~~*/
+  .logimg{
+    height:55px;
+    width:55px;
+    margin-top: 0%;
+    color:#332042;
+  }
+  .logo1{
+  
+    color:#281933;
+  }
+  .profile_photo{
+    height:30px;
+    width:30px;
+    margin-top: 1px;
+  }
+  .display_photo{
+    height:250px;
+    width:200px;
+    margin-top: 1px;
+  }
+
+   /* Style The Dropdown Button */
+.dropbtn {
+  background-color: #312450;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+ margin-top: 7px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color:#281933;
+}
+  

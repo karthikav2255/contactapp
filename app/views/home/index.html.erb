@@ -1,0 +1,13 @@
+<%#  render 'home/index_logbox' %>
+
+
+<% if user_signed_in? %>
+
+
+  <%= render "home/index_signin" %>
+ 
+<% else %>  
+ 
+  <%= render "home/index_logbox" %>
+
+<% end %>
